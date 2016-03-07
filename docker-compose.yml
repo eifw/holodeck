@@ -1,0 +1,26 @@
+version: '2'
+services:
+  holodecka:
+    image: mhvdboog/holodeck
+    container_name: holodecka
+    ports:
+      - 8081:8081
+    networks:
+      - holodeck
+    environment:
+      - RECEIVING_MSH_HOST=holodeckb:8082
+      - AXIS_PORT=8081
+      - ROLE=sender
+  holodeckb:
+    image: mhvdboog/holodeck
+    container_name: holodeckb
+    ports:
+      - 8082:8082
+    networks:
+      - holodeck
+    environment:
+      - AXIS_PORT=8082
+      - ROLE=receiver
+networks:
+  holodeck:
+    driver: bridge
