@@ -11,8 +11,10 @@ RUN /sbin/apk update && /sbin/apk add libxslt && \
 
 VOLUME /opt/holodeck/conf
 VOLUME /opt/holodeck/data
+
+ENV AXIS_PORT 8080
+
 EXPOSE 8080
-EXPOSE 9090
 
 ENTRYPOINT ["/opt/holodeck/bin/init.sh"]
 
