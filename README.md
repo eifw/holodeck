@@ -30,3 +30,5 @@ from the holodeck/examples/msgs to holodeck/data/msg_out in the sender container
 
 # Build your own Docker Image
 The Dockerfile is an example how to build an image for Holodeck.
+
+The Dockerfile expects a binary distribution of Holodeck to be available in the `holodeck` subdirectory.
