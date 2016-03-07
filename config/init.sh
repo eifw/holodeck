@@ -16,6 +16,7 @@ if [ "$ROLE" != "" ]; then
 		if [ "$RECEIVING_MSH_HOST" != "" ]; then
 			/usr/bin/xsltproc --stringparam receiverHost $RECEIVING_MSH_HOST /opt/holodeck/bin/setReceiver.xsl /opt/holodeck/examples/pmodes/ex-pm-push-init.xml  > /opt/holodeck/examples/pmodes/ex-pm-push-init-sender.xml
 			/bin/cp /opt/holodeck/examples/pmodes/ex-pm-push-init-sender.xml /opt/holodeck/conf/pmodes/ex-pm-push-init.xml
+			/bin/cp -r /opt/holodeck/examples/msgs/* /opt/holodeck/data/msg_out/.
 		else
 			/bin/cp /opt/holodeck/examples/pmodes/ex-pm-push-init.xml /opt/holodeck/conf/pmodes/.
 		fi
