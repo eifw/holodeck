@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-if [ -f /opt/holodeck/bin/init.done ]; then exit 1; fi
+if [ -f /var/lib/holodeck/init.done ]; then exit 1; fi
 
 if [ "$AXIS_PORT" != "" ]; then
 	/usr/bin/xsltproc --param port $AXIS_PORT /opt/holodeck/bin/setWSPort.xsl /opt/holodeck/conf/axis2.xml > /opt/holodeck/conf/axis2_out.xml
@@ -23,6 +23,4 @@ if [ "$ROLE" != "" ]; then
 	fi
 fi
 
-/bin/touch /opt/holodeck/bin/init.done
-
-sh /opt/holodeck/bin/startServer.sh
+/bin/touch /var/lib/holodeck/init.done
